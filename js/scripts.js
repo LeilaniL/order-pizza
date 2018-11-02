@@ -31,11 +31,34 @@ Pizza.prototype.getPrice=function(){
   }
   return pizzaPrice;
 }
-var newPizza = new Pizza("large", "onions, peppers", "sausage");
-var secondPizza = new Pizza ("medium","mushrooms, olives, tomatoes", "chicken");
-var newOrder = new Order();
-newOrder.addPizza(newPizza);
-newOrder.addPizza(secondPizza);
-console.log(newOrder);
-console.log(newPizza.getPrice(newPizza));
-console.log(secondPizza.getPrice(secondPizza));
+// var newPizza = new Pizza("large", "onions, peppers", "sausage");
+// var secondPizza = new Pizza ("medium","mushrooms, olives, tomatoes", "chicken");
+// var newOrder = new Order();
+// newOrder.addPizza(newPizza);
+// newOrder.addPizza(secondPizza);
+// console.log(newOrder);
+// console.log(newPizza.getPrice(newPizza));
+// console.log(secondPizza.getPrice(secondPizza));
+
+// ----front end----
+$(document).ready(function(){
+  $("form").submit(function(event){
+    event.preventDefault;
+    var inputSize = ($('input[name=selectSize]:checked').val());
+    var inputMeatToppings = [];
+  $("input:checkbox[name=meats]:checked").each(function(){
+      var checkedMeats = $(this).val();
+      inputMeatToppings.push(checkedMeats);
+    });
+    var inputVeggieToppings = [];
+    $("input:checkbox[name=veggies]:checked").each(function(){
+        var checkedVeggies = $(this).val();
+        inputVeggieToppings.push(checkedVeggies);
+      });
+    var newPizza = new Pizza(inputSize, inputVeggieToppings, inputMeatToppings);
+    debugger;
+    var newOrder = new Order();
+    newOrder.addPizza(newPizza);
+    alert(newPizza.size + newPizza.meatToppings+ newPizza.veggieToppings);
+  })
+})
