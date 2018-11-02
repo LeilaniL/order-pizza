@@ -19,6 +19,6 @@ p {
 #button{
   display: flex; justify-content: center;
 }
-#viewOrder {
+.viewOrder {
   display: none;
 }
