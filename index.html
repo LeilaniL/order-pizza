@@ -1,37 +1,41 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <script
-  src="https://code.jquery.com/jquery-3.3.1.js"
-  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-  crossorigin="anonymous"></script>
-  <script src="js/scripts.js"></script>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-<link rel="stylesheet" href="css/styles.css">
-  <title>Get Pizza!</title>
-</head>
-<body>
-  <div class="container">
-    <h1>Order Your Pizza</h1>
-    <form>
-      <div class="form-group">
-      <p>Pick a size:</p>
-        <label for="sizeL" name="selectSize"><input id="sizeL" type="radio" name="selectSize" value="large">Large</label>
-        <label for="sizeM name="selectSize""><input id="sizeM" type="radio" name="selectSize" value="medium">Medium</label>
-        <label for="sizeS" name="selectSize"><input id="sizeS" type="radio" name="selectSize" value="small">Small</label>
+  <head>
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
+    <script src="js/scripts.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/styles.css">
+    <title>Get Pizza!</title>
+  </head>
+  <body>
+    <div class="content">
+      <div class="container">
+        <h1>Order Your Pizza</h1>
+        <form>
+          <div class="form-group">
+          <p>Pick a size:</p>
+            <label for="sizeL" name="selectSize"><input id="sizeL" type="radio" name="selectSize" value="large">Large</label>
+            <label for="sizeM name="selectSize""><input id="sizeM" type="radio" name="selectSize" value="medium">Medium</label>
+            <label for="sizeS" name="selectSize"><input id="sizeS" type="radio" name="selectSize" value="small">Small</label>
+          </div>
+          <div class="form-group">
+            <p>Choose your toppings:</p>
+              <input type="checkbox" name="veggies" value="peppers"> Green Bell Peppers<br>
+              <input type="checkbox" name="veggies" value="onions"> Onions<br>
+              <input type="checkbox" name="veggies" value="olives" > Olives<br>
+              <input type="checkbox" name="meats" value="pepperoni"> Pepperoni<br>
+              <input type="checkbox" name="meats" value="sausage"> Sausage<br>
+              <input type="checkbox" name="meats" value="chicken" > Chicken<br>
+          </div>
+          <div id="button">
+            <button type="submit">Create My Pizza</button>
+        </div>
+          <p id="viewOrder">Total Price: <strong>$<span id="viewPrice"></span></strong></p>
+        </form>
       </div>
-      <div class="form-group">
-        <p>Choose your toppings:</p>
-          <input type="checkbox" name="veggies" value="peppers"> Green Bell Peppers<br>
-          <input type="checkbox" name="veggies" value="onions"> Onions<br>
-          <input type="checkbox" name="veggies" value="olives" > Olives<br>
-          <input type="checkbox" name="meats" value="pepperoni"> Pepperoni<br>
-          <input type="checkbox" name="meats" value="sausage"> Sausage<br>
-          <input type="checkbox" name="meats" value="chicken" > Chicken<br>
-      </div>
-      <button type="submit">Create My Pizza</button>
-      <p id="viewOrder">Total Price: <strong>$<span id="viewPrice"></span></strong></p>
-    </form>
-  </div>
-</body>
+    </div>
+  </body>
 </html>

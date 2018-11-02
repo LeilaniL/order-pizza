@@ -31,14 +31,6 @@ Pizza.prototype.getPrice=function(){
   }
   return(pizzaPrice);
 }
-// var newPizza = new Pizza("large", "onions, peppers", "sausage");
-// var secondPizza = new Pizza ("medium","mushrooms, olives, tomatoes", "chicken");
-// var newOrder = new Order();
-// newOrder.addPizza(newPizza);
-// newOrder.addPizza(secondPizza);
-// console.log(newOrder);
-// console.log(newPizza.getPrice(newPizza));
-// console.log(secondPizza.getPrice(secondPizza));
 
 // ----front end----
 $(document).ready(function(){
@@ -56,13 +48,10 @@ $(document).ready(function(){
         inputVeggieToppings.push(checkedVeggies);
       });
     var newPizza = new Pizza(inputSize, inputVeggieToppings, inputMeatToppings);
-    debugger;
     var newOrder = new Order();
     newOrder.addPizza(newPizza);
     var pizzaPrice=(newPizza.getPrice());
-    // newPizza.getPrice();
     $("p#viewOrder").show();
     $("span#viewPrice").text(pizzaPrice);
-    // alert(newPizza.size + newPizza.meatToppings+ newPizza.veggieToppings);
   })
 })
