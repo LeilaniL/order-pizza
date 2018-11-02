@@ -16,8 +16,10 @@ p {
   font-size: 18px;
   font-weight: bold;
 }
-#button{
-  display: flex; justify-content: center;
+.button{
+  display: flex; 
+  justify-content: center;
+  margin: 20px;
 }
 .viewOrder {
   display: none;

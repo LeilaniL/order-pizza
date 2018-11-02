@@ -33,10 +33,9 @@ Pizza.prototype.getPrice=function(){
   if(this.veggieToppings.length>=2){
     pizzaPrice+=3;
   }
-  // need to fix special topping price
-  // if(this.meatToppings=="sausage"||this.meatToppings=="chicken"){
-  //   pizzaPrice+=4;
-  // }
+  if(this.meatToppings.includes("sausage")||this.meatToppings.includes("chicken")){
+    pizzaPrice+=4;
+  }
   return(pizzaPrice);
 }
 
