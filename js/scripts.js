@@ -30,12 +30,15 @@ Pizza.prototype.getPrice=function(){
   if(this.size==="medium"){
     pizzaPrice+=2;
   };
-  if(this.veggieToppings.length>=2){
-    pizzaPrice+=3;
-  }
-  if(this.meatToppings.includes("sausage")||this.meatToppings.includes("chicken")){
+  // Two veggie toppings included, but add $2 for each extra
+  if(this.veggieToppings.length>2){
+    pizzaPrice = pizzaPrice +(2*(this.veggieToppings.length)-4);
+  };
+  this.meatToppings.forEach(function(topping){
+    if(topping=="sausage"||topping=="chicken"){
     pizzaPrice+=4;
-  }
+    }
+    });
   return(pizzaPrice);
 }
 

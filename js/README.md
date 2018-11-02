@@ -13,5 +13,8 @@
 
 ## Languages and Libraries Used
 
+## Known Bugs
+* _If a size is not selected,  
+
 ## License
 
