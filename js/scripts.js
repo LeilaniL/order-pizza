@@ -29,7 +29,7 @@ Pizza.prototype.getPrice=function(){
   if(this.meatToppings=="sausage"||this.meatToppings=="chicken"){
     pizzaPrice+=4;
   }
-  return pizzaPrice;
+  return(pizzaPrice);
 }
 // var newPizza = new Pizza("large", "onions, peppers", "sausage");
 // var secondPizza = new Pizza ("medium","mushrooms, olives, tomatoes", "chicken");
@@ -43,7 +43,7 @@ Pizza.prototype.getPrice=function(){
 // ----front end----
 $(document).ready(function(){
   $("form").submit(function(event){
-    event.preventDefault;
+    event.preventDefault();
     var inputSize = ($('input[name=selectSize]:checked').val());
     var inputMeatToppings = [];
   $("input:checkbox[name=meats]:checked").each(function(){
@@ -59,6 +59,10 @@ $(document).ready(function(){
     debugger;
     var newOrder = new Order();
     newOrder.addPizza(newPizza);
-    alert(newPizza.size + newPizza.meatToppings+ newPizza.veggieToppings);
+    var pizzaPrice=(newPizza.getPrice());
+    // newPizza.getPrice();
+    $("p#viewOrder").show();
+    $("span#viewPrice").text(pizzaPrice);
+    // alert(newPizza.size + newPizza.meatToppings+ newPizza.veggieToppings);
   })
 })
