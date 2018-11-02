@@ -8,7 +8,6 @@ function Pizza(size, veggieToppings, meatToppings){
   this.meatToppings=meatToppings
 }
 Order.prototype.addPizza=function(pizza){
-  debugger;
   pizza.id=this.assignId();
   this.pizzas.push(pizza);
 }
@@ -21,6 +20,7 @@ Order.prototype.getTotal=function(){
   this.pizzas.forEach(function(pizza){
     orderTotal+=(pizza.getPrice());
   })
+  return orderTotal;
 }
 Pizza.prototype.getPrice=function(){
   var pizzaPrice = 5;
@@ -33,9 +33,10 @@ Pizza.prototype.getPrice=function(){
   if(this.veggieToppings.length>=2){
     pizzaPrice+=3;
   }
-  if(this.meatToppings=="sausage"||this.meatToppings=="chicken"){
-    pizzaPrice+=4;
-  }
+  // need to fix special topping price
+  // if(this.meatToppings=="sausage"||this.meatToppings=="chicken"){
+  //   pizzaPrice+=4;
+  // }
   return(pizzaPrice);
 }
 
@@ -56,13 +57,11 @@ $(document).ready(function(){
         inputVeggieToppings.push(checkedVeggies);
       });
     var newPizza = new Pizza(inputSize, inputVeggieToppings, inputMeatToppings);
-   
     newOrder.addPizza(newPizza);
     var pizzaPrice=(newPizza.getPrice());
     $("p.viewOrder").show();
     $("span#viewPrice").text(pizzaPrice);
-    // $("span#viewOrderTotal").text(orderTotal);
-    debugger;
-    newOrder.getTotal();
+    var orderTotal=(newOrder.getTotal());
+    $("span#viewOrderTotal").text(orderTotal);
   })
 })
