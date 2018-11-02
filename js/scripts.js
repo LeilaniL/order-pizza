@@ -15,8 +15,27 @@ Order.prototype.assignId=function(){
   this.currentId++;
   return this.currentId;
 }
+Pizza.prototype.getPrice=function(){
+  var pizzaPrice = 5;
+  if(this.size==="large"){
+    pizzaPrice+=4;
+  };
+  if(this.size==="medium"){
+    pizzaPrice+=2;
+  };
+  if(this.veggieToppings.length>=2){
+    pizzaPrice+=3;
+  }
+  if(this.meatToppings=="sausage"||this.meatToppings=="chicken"){
+    pizzaPrice+=4;
+  }
+  return pizzaPrice;
+}
 var newPizza = new Pizza("large", "onions, peppers", "sausage");
-console.log(newPizza);
+var secondPizza = new Pizza ("medium","mushrooms, olives, tomatoes", "chicken");
 var newOrder = new Order();
 newOrder.addPizza(newPizza);
+newOrder.addPizza(secondPizza);
 console.log(newOrder);
+console.log(newPizza.getPrice(newPizza));
+console.log(secondPizza.getPrice(secondPizza));
